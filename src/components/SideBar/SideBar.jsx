@@ -1,15 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchMetaData } from '../../redux/actions/issuesActions';
-import DataList from '../DataList/DataList.jsx';
+import { fetchMetaData, fetchIssuesList } from '../../redux/actions/issuesActions';
 
 import './SideBar.css';
 
 class SideBar extends Component {
   constructor(props) {
     super(props);
-    this.props.dispatch(fetchMetaData())
+    this.state = {
+      language: '',
+      tech_stack: '',
+      experience_needed: '',
+    };
+    this.props.dispatch(fetchMetaData());
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    this.props.dispatch(fetchIssuesList(this.state));
+  }
+
+  handleChange(name, event) {
+      let change = {};
+      change[name] = event.target.value;
+      this.setState(change);
+    }
+
+  makeOptionsList(list) {
+    let optionsList = [];
+    optionsList = list.map((value, key) => {
+      return <option key={key} value={value} />
+    });
+    return optionsList;
   }
 
   render() {
@@ -18,21 +42,46 @@ class SideBar extends Component {
     const experienceNeeded = metadata.data.experience_needed;
     const techStack = metadata.data.tech_stack;
 
-    const fetched = (
-      <div>
-        <DataList options={languages} title="language" />
-        <DataList options={experienceNeeded} title="experience level" />
-        <DataList options={techStack} title="technology stack" />
-      </div>
-    );
+    let renderingComponent;
 
-    const fetching = <h3>Loading... </h3>;
-
-    const error = <h4>Server Error</h4>;
+    if (metadata.fetched) {
+      renderingComponent = (
+        <div>
+          <form className="form-group" >
+            <div className="form-group">
+              <h5>Language</h5>
+              <input list="languages" className="form-control" value={this.state.value} onChange={this.handleChange.bind(this, 'language')} />
+              <datalist id="languages">
+                {this.makeOptionsList(languages)}
+              </datalist>
+            </div>
+            <div className="form-group">
+              <h5>Experience Level</h5>
+              <input list="experienceNeeded" className="form-control" value={this.state.value} onChange={this.handleChange.bind(this, 'experience_needed')} />
+              <datalist id="experienceNeeded">
+                {this.makeOptionsList(experienceNeeded)}
+              </datalist>
+            </div>
+            <div className="form-group">
+              <h5>Technology Stack</h5>
+              <input list="techStack" className="form-control" value={this.state.value} onChange={this.handleChange.bind(this, 'tech_stack')} />
+              <datalist id="techStack">
+                {this.makeOptionsList(techStack)}
+              </datalist>
+            </div>
+          </form>
+          <button className="btn btn-primary" onClick={ e => this.handleClick() }>Submit</button>
+        </div>
+      );
+    } else if (metadata.fetching) {
+      renderingComponent = <h3>Loading... </h3>
+    } else {
+      renderingComponent = <h4 className="alert alert-warning">Error: Something went wrong</h4>;
+    }
 
     return (
       <div>
-        {metadata.fetched ? fetched : (metadata.error ? error : fetching)}
+        {renderingComponent}
       </div>
     );
   }
@@ -40,7 +89,7 @@ class SideBar extends Component {
 
 function mapStateToProps(state) {
   return {
-    metadata: state.issues,
+    metadata: state.issues.metadata,
   };
 }
 
