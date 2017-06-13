@@ -18,15 +18,14 @@ class IssueList extends Component {
         <div>
           <div>
             <h3>
-              <b>Issues</b>
+              <b className="gray-text">Issues</b>
               <div className="pull-right">
-                <DropdownButton bsStyle="primary" title="Sort" id="sort">
+                <DropdownButton bsSize="small" bsStyle="info" title="Sort" id="sort">
                   <MenuItem eventKey="1">Action</MenuItem>
                 </DropdownButton>
               </div>
             </h3>
           </div>
-          <br/>
           <div>
             {IssueCardList}
           </div>

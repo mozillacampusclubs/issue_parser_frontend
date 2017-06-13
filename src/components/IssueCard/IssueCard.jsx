@@ -13,7 +13,11 @@ class IssueCard extends Component {
     let labelsList;
 
     labelsList = data.issue_labels.map((labelInstance, key) => {
-      return <span className="label label-default" key={key} style={{backgroundColor: '#' + labelInstance.label_color}}>{labelInstance.label_name}</span>;
+      return (
+        <span className="label label-default" key={key} style={{backgroundColor: '#' + labelInstance.label_color}}>
+          {labelInstance.label_name}
+        </span>
+      );
     });
 
     return (
@@ -26,10 +30,10 @@ class IssueCard extends Component {
             </h4>
             <div className="lightslategray-text issue-card-date">
               <span>
-                Created: {this.formatDate(data.created_at)}
+                Created: <b>{this.formatDate(data.created_at)}</b>
               </span>
               <span className="pull-right">
-                Last Updated: {this.formatDate(data.updated_at)}
+                Last Updated: <b>{this.formatDate(data.updated_at)}</b>
               </span>
             </div>
           </div>
