@@ -9,13 +9,15 @@ class IssueList extends Component {
   constructor() {
     super();
     this.state = {
-      ordering : "random",
+      ordering : 'random',
     }
     this.sortIssues = this.sortIssues.bind(this);
   }
 
   sortIssues(value, order) {
     this.props.dispatch(sortIssues(value, order));
+    let sort = order === 1 ? ' (ascending)' : ' (descending)';
+    this.setState({ordering: value + sort});
   }
 
   render() {
