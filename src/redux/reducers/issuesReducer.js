@@ -76,9 +76,42 @@ export default function reducer(state = {
         break;
       }
 
+    case "SORT_ISSUES":
+      {
+        let sortData = [...state.issuesList.data];
+        if (action.payload.order === -1) {
+          sortData.sort(descending);
+        } else if (action.payload.order === 1) {
+          sortData.sort(ascending);
+        }
+
+        state = { ...state, issuesList: {
+          data: sortData,
+          fetching: false,
+          fetched: true,
+          error: null,
+        }};
+        break;
+      }
 
     default:
       {}
+  }
+
+  function ascending(a, b) {
+    if (a[action.payload.attr] < b[action.payload.attr])
+      return -1;
+    if (a[action.payload.attr] > b[action.payload.attr])
+      return 1;
+    return 0;
+  }
+
+  function descending(a, b) {
+    if (a[action.payload.attr] > b[action.payload.attr])
+      return -1;
+    if (a[action.payload.attr] < b[action.payload.attr])
+      return 1;
+    return 0;
   }
 
   return state
