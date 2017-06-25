@@ -3,13 +3,13 @@ export default function reducer(state = {
     data: {},
     fetching: false,
     fetched: false,
-    error: null,
+    error: false,
   },
   metadata: {
     data: {},
     fetching: false,
     fetched: false,
-    error: null,
+    error: false,
   }
 }, action) {
   switch (action.type) {
@@ -19,7 +19,7 @@ export default function reducer(state = {
           data: {},
           fetching: true,
           fetched: false,
-          error: null,
+          error: false,
         }};
         break;
       }
@@ -29,7 +29,7 @@ export default function reducer(state = {
           data: action.payload.data,
           fetching: false,
           fetched: true,
-          error: null,
+          error: false,
         }};
         break;
       }
@@ -39,7 +39,7 @@ export default function reducer(state = {
           data: {},
           fetching: false,
           fetched: false,
-          error: "issues fetching error",
+          error: true,
         }};
         break;
       }
@@ -51,7 +51,7 @@ export default function reducer(state = {
           data: {},
           fetching: true,
           fetched: false,
-          error: null,
+          error: false,
         }};
         break;
       }
@@ -61,7 +61,7 @@ export default function reducer(state = {
           data: action.payload.data,
           fetching: false,
           fetched: true,
-          error: null,
+          error: false,
         }};
         break;
       }
@@ -71,7 +71,7 @@ export default function reducer(state = {
           data: {},
           fetching: false,
           fetched: false,
-          error: "issues fetching error",
+          error: true,
         }};
         break;
       }
@@ -89,7 +89,7 @@ export default function reducer(state = {
           data: sortData,
           fetching: false,
           fetched: true,
-          error: null,
+          error: false,
         }};
         break;
       }
