@@ -1,10 +1,14 @@
 import * as actions from '../../../redux/actions/issuesActions';
-import nock from 'nock';
+import moxios from 'moxios'
 import promise from 'redux-promise-middleware';
 import configureMockStore from 'redux-mock-store'
+
+import { APIBase } from '../../../constraints';
+
 const middlewares = [promise()]
 const mockStore = configureMockStore(middlewares)
 
+// Below code test suite non async actions.
 describe('normal actions', () => {
   it('should create an action to sort issues', () => {
     const attr = 'experience_needed';
@@ -17,9 +21,26 @@ describe('normal actions', () => {
   })
 })
 
-
+// Below code test suite only async actions.
 describe('async actions', () => {
+
+  beforeEach(function () {
+    // import and pass your custom axios instance to this method
+    moxios.install()
+  })
+
+  afterEach(function () {
+    // import and pass your custom axios instance to this method
+    moxios.uninstall()
+  })
+
   it('test fetch metadata action', () => {
+
+    moxios.stubRequest(APIBase() + '/metadata/', {
+      status: 200,
+      response: {}
+    });
+
     const expectedActionsAfterSuccess = [
       { type: 'FETCH_METADATA_PENDING' },
       { type: 'FETCH_METADATA_FULFILLED' }
@@ -30,7 +51,7 @@ describe('async actions', () => {
       { type: 'FETCH_METADATA_REJECTED' }
     ]
 
-    const store = mockStore({})
+    const store = mockStore({ todos: []  })
 
     return store.dispatch(actions.fetchMetaData()).then(() => {
       expect(store.getActions()[0].type).toEqual(expectedActionsAfterSuccess[0].type)
@@ -42,6 +63,12 @@ describe('async actions', () => {
   })
 
   it('test fetch issues action', () => {
+
+    moxios.stubRequest(APIBase() + '/issues/', {
+      status: 200,
+      response: {}
+    });
+
     const expectedActionsAfterSuccess = [
       { type: 'FETCH_ISSUES_LIST_PENDING' },
       { type: 'FETCH_ISSUES_LIST_FULFILLED' }
