@@ -2,7 +2,8 @@ import * as actions from '../../../redux/actions/issuesActions';
 import nock from 'nock';
 import promise from 'redux-promise-middleware';
 import configureMockStore from 'redux-mock-store'
-
+const middlewares = [promise()]
+const mockStore = configureMockStore(middlewares)
 
 describe('normal actions', () => {
   it('should create an action to sort issues', () => {
@@ -10,58 +11,56 @@ describe('normal actions', () => {
     const order = 1;
     const expectedAction = {
       type: "SORT_ISSUES",
-      payload: {
-        attr,
-        order
-      }
+      payload: {attr,order}
     }
     expect(actions.sortIssues(attr, order)).toEqual(expectedAction);
   })
 })
 
 
-
 describe('async actions', () => {
-  const middlewares = [promise]
-  const mockStore = configureMockStore(middlewares)
-
-  afterEach(() => {
-    nock.cleanAll()
-  })
-
-  it('creates FETCH_METADATA_FULFILLED when fetched metadata', () => {
-    const metadata = {
-      "experience_needed": [
-          "senior",
-          "moderate",
-          "easyfix"
-      ],
-      "language": [
-          "python",
-          "javascript",
-          "python, sql",
-          "yml"
-      ],
-      "tech_stack": [
-          "react.js",
-          "django, celery",
-          "jest",
-          "django"
-      ]
-    }
-    nock('http://example.com/')
-      .get('/metadata')
-      .reply(200, { metadata: metadata })
-
-    const expectedActions = [
+  it('test fetch metadata action', () => {
+    const expectedActionsAfterSuccess = [
       { type: 'FETCH_METADATA_PENDING' },
-      { type: 'FETCH_METADATA_FULFILLED', metadata: metadata }
+      { type: 'FETCH_METADATA_FULFILLED' }
     ]
-    const store = mockStore({ metadata: metadata })
+
+    const expectedActionsAfterFailure = [
+      { type: 'FETCH_METADATA_PENDING' },
+      { type: 'FETCH_METADATA_REJECTED' }
+    ]
+
+    const store = mockStore({})
 
     return store.dispatch(actions.fetchMetaData()).then(() => {
-      // return of async actions
-      expect(store.getActions()).toEqual(expectedActions)
+      expect(store.getActions()[0].type).toEqual(expectedActionsAfterSuccess[0].type)
+      expect(store.getActions()[1].type).toEqual(expectedActionsAfterSuccess[1].type)
+    }).catch(() => {
+      expect(store.getActions()[0].type).toEqual(expectedActionsAfterFailure[0].type)
+      expect(store.getActions()[1].type).toEqual(expectedActionsAfterFailure[1].type)
     })
   })
+
+  it('test fetch issues action', () => {
+    const expectedActionsAfterSuccess = [
+      { type: 'FETCH_ISSUES_LIST_PENDING' },
+      { type: 'FETCH_ISSUES_LIST_FULFILLED' }
+    ]
+
+    const expectedActionsAfterFailure = [
+      { type: 'FETCH_ISSUES_LIST_PENDING' },
+      { type: 'FETCH_ISSUES_LIST_REJECTED' }
+    ]
+
+    const store = mockStore({})
+
+    return store.dispatch(actions.fetchIssuesList({})).then(() => {
+      expect(store.getActions()[0].type).toEqual(expectedActionsAfterSuccess[0].type)
+      expect(store.getActions()[1].type).toEqual(expectedActionsAfterSuccess[1].type)
+    }).catch(() => {
+      expect(store.getActions()[0].type).toEqual(expectedActionsAfterFailure[0].type)
+      expect(store.getActions()[1].type).toEqual(expectedActionsAfterFailure[1].type)
+    })
+  })
+
 })
