@@ -38,7 +38,7 @@ describe('async actions', () => {
 
     moxios.stubRequest(APIBase() + '/metadata/', {
       status: 200,
-      response: {}
+      response: { working: true }
     });
 
     const expectedActionsAfterSuccess = [
@@ -51,14 +51,15 @@ describe('async actions', () => {
       { type: 'FETCH_METADATA_REJECTED' }
     ]
 
-    const store = mockStore({ todos: []  })
+    const store = mockStore({ working: false })
 
     return store.dispatch(actions.fetchMetaData()).then(() => {
-      expect(store.getActions()[0].type).toEqual(expectedActionsAfterSuccess[0].type)
-      expect(store.getActions()[1].type).toEqual(expectedActionsAfterSuccess[1].type)
+      expect(store.getActions()[1].payload.data.working).toEqual(true);
+      expect(store.getActions()[0].type).toEqual(expectedActionsAfterSuccess[0].type);
+      expect(store.getActions()[1].type).toEqual(expectedActionsAfterSuccess[1].type);
     }).catch(() => {
-      expect(store.getActions()[0].type).toEqual(expectedActionsAfterFailure[0].type)
-      expect(store.getActions()[1].type).toEqual(expectedActionsAfterFailure[1].type)
+      expect(store.getActions()[0].type).toEqual(expectedActionsAfterFailure[0].type);
+      expect(store.getActions()[1].type).toEqual(expectedActionsAfterFailure[1].type);
     })
   })
 
@@ -66,7 +67,7 @@ describe('async actions', () => {
 
     moxios.stubRequest(APIBase() + '/issues/', {
       status: 200,
-      response: {}
+      response: { working: true }
     });
 
     const expectedActionsAfterSuccess = [
@@ -79,14 +80,15 @@ describe('async actions', () => {
       { type: 'FETCH_ISSUES_LIST_REJECTED' }
     ]
 
-    const store = mockStore({})
+    const store = mockStore({ working: false })
 
     return store.dispatch(actions.fetchIssuesList({})).then(() => {
-      expect(store.getActions()[0].type).toEqual(expectedActionsAfterSuccess[0].type)
-      expect(store.getActions()[1].type).toEqual(expectedActionsAfterSuccess[1].type)
+      expect(store.getActions()[1].payload.data.working).toEqual(true);
+      expect(store.getActions()[0].type).toEqual(expectedActionsAfterSuccess[0].type);
+      expect(store.getActions()[1].type).toEqual(expectedActionsAfterSuccess[1].type);
     }).catch(() => {
-      expect(store.getActions()[0].type).toEqual(expectedActionsAfterFailure[0].type)
-      expect(store.getActions()[1].type).toEqual(expectedActionsAfterFailure[1].type)
+      expect(store.getActions()[0].type).toEqual(expectedActionsAfterFailure[0].type);
+      expect(store.getActions()[1].type).toEqual(expectedActionsAfterFailure[1].type);
     })
   })
 
