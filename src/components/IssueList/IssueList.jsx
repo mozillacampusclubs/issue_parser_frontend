@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import { sortIssues } from '../../redux/actions/issuesActions';
 import IssueCard from '../IssueCard/IssueCard'
 
-class IssueList extends Component {
+// Use named export for unconnected component (for tests)
+export class IssueList extends Component {
   constructor() {
     super();
     this.state = {
@@ -81,4 +82,5 @@ function mapStateToProps(state) {
   };
 }
 
+// Use default export for the connected component (for app)
 export default connect(mapStateToProps)(IssueList);

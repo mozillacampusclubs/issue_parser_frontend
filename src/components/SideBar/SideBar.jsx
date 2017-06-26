@@ -5,7 +5,8 @@ import { fetchMetaData, fetchIssuesList } from '../../redux/actions/issuesAction
 
 import './SideBar.css';
 
-class SideBar extends Component {
+// Use named export for unconnected component (for tests)
+export class SideBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -93,4 +94,5 @@ function mapStateToProps(state) {
   };
 }
 
+// Use default export for the connected component (for app)
 export default connect(mapStateToProps)(SideBar);
