@@ -24,10 +24,10 @@ export class SideBar extends Component {
   }
 
   handleChange(name, event) {
-      let change = {};
-      change[name] = event.target.value;
-      this.setState(change);
-    }
+    let change = {};
+    change[name] = event.target.value;
+    this.setState(change);
+  }
 
   makeOptionsList(list) {
     let optionsList = [];

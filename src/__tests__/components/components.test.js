@@ -61,14 +61,28 @@ describe('side bar component', () => {
           "django"
         ]
       },
-      fetched: true,
+      fetched: false,
       fetching: false,
       error: false
     }
   }
-  it('renders without crashing', () => {
-    shallow(<SideBar {...props} />);
-  })
+  it('renders without crashing when data is fetching', () => {
+    const metadata = {...props.metadata, fetching: true};
+    const newProps = {...props, metadata}
+    shallow(<SideBar {...newProps} />);
+  });
+
+  it('renders without crashing when data is fetched', () => {
+    const metadata = {...props.metadata, fetched: true};
+    const newProps = {...props, metadata}
+    shallow(<SideBar {...newProps} />);
+  });
+
+  it('renders without crashing when server error', () => {
+    const metadata = {...props.metadata, error: true};
+    const newProps = {...props, metadata}
+    shallow(<SideBar {...newProps} />);
+  });
 })
 
 describe('issue list component', () => {
@@ -76,13 +90,28 @@ describe('issue list component', () => {
     dispatch: jest.fn(),
     issuesList: {
       data: [],
-      fetched: true,
+      fetched: false,
       fetching: false,
       error: false
     }
   }
-  it('renders without crashing', () => {
-    shallow(<IssueList {...props} />);
+
+  it('renders without crashing when data is fetching', () => {
+    const issuesList = {...props.issuesList, fetching: true};
+    const newProps = {...props, issuesList}
+    shallow(<IssueList {...newProps} />);
+  });
+
+  it('renders without crashing when data is fetched', () => {
+    const issuesList = {...props.issuesList, fetched: true};
+    const newProps = {...props, issuesList}
+    shallow(<IssueList {...newProps} />);
+  });
+
+  it('renders without crashing when server error', () => {
+    const issuesList = {...props.issuesList, error: true};
+    const newProps = {...props, issuesList}
+    shallow(<IssueList {...newProps} />);
   });
 })
 

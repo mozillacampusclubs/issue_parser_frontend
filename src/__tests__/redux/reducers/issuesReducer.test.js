@@ -132,10 +132,18 @@ describe('issues reducer', () => {
         "title": "Configure MySQL Database",
         "experience_needed": "easyfix",
       },
+      {
+        "title": "something",
+        "experience_needed": "easyfix",
+      },
     ];
     const ascSortedData = [
       {
         "title": "Configure MySQL Database",
+        "experience_needed": "easyfix",
+      },
+      {
+        "title": "something",
         "experience_needed": "easyfix",
       },
       {
@@ -183,6 +191,10 @@ describe('issues reducer', () => {
         "title": "Configure MySQL Database",
         "experience_needed": "easyfix",
       },
+      {
+        "title": "something",
+        "experience_needed": "easyfix",
+      },
     ];
     const descSortedData = [
       {
@@ -195,6 +207,10 @@ describe('issues reducer', () => {
       },
       {
         "title": "Configure MySQL Database",
+        "experience_needed": "easyfix",
+      },
+      {
+        "title": "something",
         "experience_needed": "easyfix",
       },
     ];
