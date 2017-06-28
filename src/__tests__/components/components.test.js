@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import Container from '../../components/Container/Container';
-import IssueCard from '../../components/IssueCard/IssueCard';
+import { Container } from '../../components/Container/Container';
+import { IssueCard } from '../../components/IssueCard/IssueCard';
 import { SideBar } from '../../components/SideBar/SideBar';
 import { IssueList } from '../../components/IssueList/IssueList';
+import renderer from 'react-test-renderer'; // For snapshot testing
 
 describe('container component', () => {
   it('renders without crashing', () => {
