@@ -1,14 +1,17 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import ReactShallowRenderer from 'react-test-renderer/shallow'; // For snapshot testing
+import ReactShallowRenderer from 'react-test-renderer/shallow'; // For shallow snapshot testing
+import ReactFullRenderer from 'react-test-renderer'; // For full component snapshot testing
 
 import { Container } from '../../components/Container/Container';
 import { IssueCard } from '../../components/IssueCard/IssueCard';
 import { SideBar } from '../../components/SideBar/SideBar';
 import { IssueList } from '../../components/IssueList/IssueList';
+import { issuesListMockData } from '../../utils/mockApi';
 
 describe('container component', () => {
   it('renders correctly', () => {
+    // shallow `snapshot` testing
     const renderer = new ReactShallowRenderer();
     expect(renderer.render(<Container />)).toMatchSnapshot();
   });
@@ -39,6 +42,8 @@ describe('issue card component', () => {
   }
 
   it('renders correctly', () => {
+    // shallow `snapshot` testing
+    // shallow `snapshot` testing
     const renderer = new ReactShallowRenderer();
     expect(renderer.render(<IssueCard data={mockData} />)).toMatchSnapshot();
   })
@@ -75,6 +80,8 @@ describe('side bar component', () => {
   it('renders correctly when data is fetching', () => {
     const metadata = {...props.metadata, fetching: true};
     const newProps = {...props, metadata}
+
+    // shallow `snapshot` testing
     const renderer = new ReactShallowRenderer();
     expect(renderer.render(<SideBar {...newProps} />)).toMatchSnapshot();
   });
@@ -97,7 +104,7 @@ describe('side bar component', () => {
     expect(wrapper.state('language')).toEqual('test');
     expect(wrapper.state('experience_needed')).toEqual('test');
 
-    // `snapshot` testing
+    // shallow `snapshot` testing
     const renderer = new ReactShallowRenderer();
     expect(renderer.render(<SideBar {...newProps} />)).toMatchSnapshot();
   });
@@ -105,6 +112,8 @@ describe('side bar component', () => {
   it('renders correctly when server error', () => {
     const metadata = {...props.metadata, error: true};
     const newProps = {...props, metadata}
+
+    // shallow `snapshot` testing
     const renderer = new ReactShallowRenderer();
     expect(renderer.render(<SideBar {...newProps} />)).toMatchSnapshot();
   });
@@ -125,6 +134,8 @@ describe('issue list component', () => {
   it('renders correctly when data is fetching', () => {
     const issuesList = {...props.issuesList, fetching: true};
     const newProps = {...props, issuesList}
+
+    // shallow `snapshot` testing
     const renderer = new ReactShallowRenderer();
     expect(renderer.render(<IssueList {...newProps} />)).toMatchSnapshot();
   });
@@ -132,9 +143,13 @@ describe('issue list component', () => {
   it('renders correctly when data is fetched', () => {
     const issuesList = {...props.issuesList, fetched: true};
     let newProps = {...props, issuesList};
-    newProps.issuesList.data = ["issue1", "issue2"];
-    const renderer = new ReactShallowRenderer();
-    expect(renderer.render(<IssueList {...newProps} />)).toMatchSnapshot();
+    newProps.issuesList.data = issuesListMockData;
+
+    // Full tree snapshot testing.
+    const tree = ReactFullRenderer.create(
+      <IssueList {...newProps} />
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
   });
 
   it('sort menu buttons are working', () => {
@@ -156,6 +171,8 @@ describe('issue list component', () => {
   it('renders correctly when server error', () => {
     const issuesList = {...props.issuesList, error: true};
     const newProps = {...props, issuesList}
+
+    // shallow `snapshot` testing
     const renderer = new ReactShallowRenderer();
     expect(renderer.render(<IssueList {...newProps} />)).toMatchSnapshot();
   });
