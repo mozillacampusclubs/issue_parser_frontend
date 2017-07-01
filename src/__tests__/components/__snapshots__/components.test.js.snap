@@ -157,6 +157,7 @@ exports[`issue list component renders correctly when data is fetched 1`] = `
               divider={false}
               eventKey="1"
               header={false}
+              id="sort-asc-experience_needed"
               onClick={[Function]}>
               Exp-level (ascending)
             </MenuItem>
@@ -166,6 +167,7 @@ exports[`issue list component renders correctly when data is fetched 1`] = `
               divider={false}
               eventKey="2"
               header={false}
+              id="sort-desc-experience_needed"
               onClick={[Function]}>
               Exp-level (descending)
             </MenuItem>
@@ -180,6 +182,7 @@ exports[`issue list component renders correctly when data is fetched 1`] = `
               divider={false}
               eventKey="3"
               header={false}
+              id="sort-asc-expected_time"
               onClick={[Function]}>
               Expected time (descending)
             </MenuItem>
@@ -189,6 +192,7 @@ exports[`issue list component renders correctly when data is fetched 1`] = `
               divider={false}
               eventKey="4"
               header={false}
+              id="sort-desc-expected_time"
               onClick={[Function]}>
               Expected time (descending)
             </MenuItem>
@@ -197,7 +201,10 @@ exports[`issue list component renders correctly when data is fetched 1`] = `
       </h3>
     </div>
     <div>
-      
+      <IssueCard
+        data="issue1" />
+      <IssueCard
+        data="issue2" />
     </div>
   </div>
 </div>
@@ -239,6 +246,7 @@ exports[`side bar component renders correctly when data is fetched 1`] = `
         </h5>
         <input
           className="form-control"
+          id="language"
           list="languages"
           onChange={[Function]}
           value={undefined} />
@@ -257,6 +265,7 @@ exports[`side bar component renders correctly when data is fetched 1`] = `
         </h5>
         <input
           className="form-control"
+          id="experience_needed"
           list="experienceNeeded"
           onChange={[Function]}
           value={undefined} />
@@ -277,6 +286,7 @@ exports[`side bar component renders correctly when data is fetched 1`] = `
         </h5>
         <input
           className="form-control"
+          id="tech_stack"
           list="techStack"
           onChange={[Function]}
           value={undefined} />

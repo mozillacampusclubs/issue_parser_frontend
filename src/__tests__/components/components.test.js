@@ -1,10 +1,11 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import ReactShallowRenderer from 'react-test-renderer/shallow'; // For snapshot testing
+
 import { Container } from '../../components/Container/Container';
 import { IssueCard } from '../../components/IssueCard/IssueCard';
 import { SideBar } from '../../components/SideBar/SideBar';
 import { IssueList } from '../../components/IssueList/IssueList';
-import ReactShallowRenderer from 'react-test-renderer/shallow'; // For snapshot testing
 
 describe('container component', () => {
   it('renders correctly', () => {
@@ -43,6 +44,7 @@ describe('issue card component', () => {
   })
 })
 
+
 describe('side bar component', () => {
   const props = {
     dispatch: jest.fn(),
@@ -69,6 +71,7 @@ describe('side bar component', () => {
       error: false
     }
   }
+
   it('renders correctly when data is fetching', () => {
     const metadata = {...props.metadata, fetching: true};
     const newProps = {...props, metadata}
@@ -79,6 +82,22 @@ describe('side bar component', () => {
   it('renders correctly when data is fetched', () => {
     const metadata = {...props.metadata, fetched: true};
     const newProps = {...props, metadata}
+
+    // `change` and `click` events testing.
+    const wrapper = shallow(<SideBar {...newProps} />);
+    const event = {target: {value: "test"}};
+    wrapper.find('button').simulate('click');
+    expect(wrapper.state('tech_stack')).toEqual('');
+    expect(wrapper.state('language')).toEqual('');
+    expect(wrapper.state('experience_needed')).toEqual('');
+    wrapper.find('#language').simulate('change', event)
+    wrapper.find('#experience_needed').simulate('change', event)
+    wrapper.find('#tech_stack').simulate('change', event)
+    expect(wrapper.state('tech_stack')).toEqual('test');
+    expect(wrapper.state('language')).toEqual('test');
+    expect(wrapper.state('experience_needed')).toEqual('test');
+
+    // `snapshot` testing
     const renderer = new ReactShallowRenderer();
     expect(renderer.render(<SideBar {...newProps} />)).toMatchSnapshot();
   });
@@ -90,6 +109,7 @@ describe('side bar component', () => {
     expect(renderer.render(<SideBar {...newProps} />)).toMatchSnapshot();
   });
 })
+
 
 describe('issue list component', () => {
   const props = {
@@ -111,9 +131,26 @@ describe('issue list component', () => {
 
   it('renders correctly when data is fetched', () => {
     const issuesList = {...props.issuesList, fetched: true};
-    const newProps = {...props, issuesList}
+    let newProps = {...props, issuesList};
+    newProps.issuesList.data = ["issue1", "issue2"];
     const renderer = new ReactShallowRenderer();
     expect(renderer.render(<IssueList {...newProps} />)).toMatchSnapshot();
+  });
+
+  it('sort menu buttons are working', () => {
+    const issuesList = {...props.issuesList, fetched: true};
+    const newProps = {...props, issuesList};
+
+    const wrapper = shallow(<IssueList {...newProps} />);
+    const initialState = {
+      ordering : 'random',
+    };
+    expect(wrapper.state()).toEqual(initialState);
+    wrapper.find('#sort-asc-experience_needed').simulate('click');
+    wrapper.find('#sort-desc-experience_needed').simulate('click');
+    wrapper.find('#sort-asc-expected_time').simulate('click');
+    wrapper.find('#sort-desc-expected_time').simulate('click');
+    expect(wrapper.state()).not.toEqual(initialState);
   });
 
   it('renders correctly when server error', () => {

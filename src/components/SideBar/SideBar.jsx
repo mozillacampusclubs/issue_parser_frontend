@@ -51,21 +51,21 @@ export class SideBar extends Component {
           <form className="form-group" >
             <div className="form-group">
               <h5>Language</h5>
-              <input list="languages" className="form-control" value={this.state.value} onChange={this.handleChange.bind(this, 'language')} />
+              <input id="language" list="languages" className="form-control" value={this.state.value} onChange={this.handleChange.bind(this, 'language')} />
               <datalist id="languages">
                 {this.makeOptionsList(languages)}
               </datalist>
             </div>
             <div className="form-group">
               <h5>Experience Level</h5>
-              <input list="experienceNeeded" className="form-control" value={this.state.value} onChange={this.handleChange.bind(this, 'experience_needed')} />
+              <input id="experience_needed" list="experienceNeeded" className="form-control" value={this.state.value} onChange={this.handleChange.bind(this, 'experience_needed')} />
               <datalist id="experienceNeeded">
                 {this.makeOptionsList(experienceNeeded)}
               </datalist>
             </div>
             <div className="form-group">
               <h5>Technology Stack</h5>
-              <input list="techStack" className="form-control" value={this.state.value} onChange={this.handleChange.bind(this, 'tech_stack')} />
+              <input id="tech_stack" list="techStack" className="form-control" value={this.state.value} onChange={this.handleChange.bind(this, 'tech_stack')} />
               <datalist id="techStack">
                 {this.makeOptionsList(techStack)}
               </datalist>
