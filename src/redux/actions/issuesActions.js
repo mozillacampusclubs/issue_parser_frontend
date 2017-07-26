@@ -17,3 +17,10 @@ export function fetchIssuesList(state) {
     })
   }
 }
+
+export function sortIssues(attr, order) {
+  return {
+        type: "SORT_ISSUES",
+        payload: {attr: attr, order: order},
+    }
+}
