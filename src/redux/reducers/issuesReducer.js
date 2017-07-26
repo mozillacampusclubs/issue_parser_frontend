@@ -1,31 +1,84 @@
-export default function reducer(state={
+export default function reducer(state = {
+  issuesList: {
     data: {},
     fetching: false,
     fetched: false,
     error: null,
+  },
+  metadata: {
+    data: {},
+    fetching: false,
+    fetched: false,
+    error: null,
+  }
 }, action) {
-  switch(action.type) {
-    case "FETCH_METADATA_PENDING": {
-      state = {...state};
-      state.fetching = true;
-      state.fetched = false;
-      break;
-    }
-    case "FETCH_METADATA_FULFILLED": {
-      state ={...state};
-      state.data = action.payload.data;
-      state.fetched = true;
-      state.fetching = false;
-      break;
-    }
-    case "FETCH_METADATA_REJECTED": {
-      state ={...state};
-      state.error = "issues fetching error";
-      state.fetched = false;
-      state.fetching = false;
-      break;
-    }
-    default: {}
+  switch (action.type) {
+    case "FETCH_METADATA_PENDING":
+      {
+        state = { ...state, metadata: {
+          data: {},
+          fetching: true,
+          fetched: false,
+          error: null,
+        }};
+        break;
+      }
+    case "FETCH_METADATA_FULFILLED":
+      {
+        state = { ...state, metadata: {
+          data: action.payload.data,
+          fetching: false,
+          fetched: true,
+          error: null,
+        }};
+        break;
+      }
+    case "FETCH_METADATA_REJECTED":
+      {
+        state = { ...state, metadata: {
+          data: {},
+          fetching: false,
+          fetched: false,
+          error: "issues fetching error",
+        }};
+        break;
+      }
+
+
+    case "FETCH_ISSUES_LIST_PENDING":
+      {
+        state = { ...state, issuesList: {
+          data: {},
+          fetching: true,
+          fetched: false,
+          error: null,
+        }};
+        break;
+      }
+    case "FETCH_ISSUES_LIST_FULFILLED":
+      {
+        state = { ...state, issuesList: {
+          data: action.payload.data,
+          fetching: false,
+          fetched: true,
+          error: null,
+        }};
+        break;
+      }
+    case "FETCH_ISSUES_LIST_REJECTED":
+      {
+        state = { ...state, issuesList: {
+          data: {},
+          fetching: false,
+          fetched: false,
+          error: "issues fetching error",
+        }};
+        break;
+      }
+
+
+    default:
+      {}
   }
 
   return state
