@@ -3,7 +3,8 @@ import dateFormat from 'dateformat';
 
 import './IssueCard.css';
 
-class IssueCard extends Component {
+// Use named export for unconnected component (for tests)
+export class IssueCard extends Component {
   formatDate(date) {
     return dateFormat(date, "dddd, mmmm dS, yyyy");
   }
@@ -75,4 +76,5 @@ class IssueCard extends Component {
   }
 }
 
+// Use default export for the connected component (for app)
 export default IssueCard;

@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import { sortIssues } from '../../redux/actions/issuesActions';
 import IssueCard from '../IssueCard/IssueCard'
 
-class IssueList extends Component {
+// Use named export for unconnected component (for tests)
+export class IssueList extends Component {
   constructor() {
     super();
     this.state = {
@@ -37,11 +38,11 @@ class IssueList extends Component {
               <div className="pull-right">
                 <span className="badge">Ordering: {this.state.ordering} </span>
                 <DropdownButton bsSize="small" bsStyle="info" title="Sort" id="sort">
-                  <MenuItem onClick={e => this.sortIssues("experience_needed", 1)} eventKey="1">Exp-level (ascending)</MenuItem>
-                  <MenuItem onClick={e => this.sortIssues("experience_needed", -1)} eventKey="2">Exp-level (descending)</MenuItem>
+                  <MenuItem id="sort-asc-experience_needed" onClick={e => this.sortIssues("experience_needed", 1)} eventKey="1">Exp-level (ascending)</MenuItem>
+                  <MenuItem id="sort-desc-experience_needed" onClick={e => this.sortIssues("experience_needed", -1)} eventKey="2">Exp-level (descending)</MenuItem>
                   <MenuItem divider />
-                  <MenuItem onClick={e => this.sortIssues("expected_time", 1)} eventKey="3">Expected time (descending)</MenuItem>
-                  <MenuItem onClick={e => this.sortIssues("expected_time", -1)} eventKey="4">Expected time (descending)</MenuItem>
+                  <MenuItem id="sort-asc-expected_time" onClick={e => this.sortIssues("expected_time", 1)} eventKey="3">Expected time (descending)</MenuItem>
+                  <MenuItem id="sort-desc-expected_time" onClick={e => this.sortIssues("expected_time", -1)} eventKey="4">Expected time (descending)</MenuItem>
                 </DropdownButton>
               </div>
             </h3>
@@ -81,4 +82,5 @@ function mapStateToProps(state) {
   };
 }
 
+// Use default export for the connected component (for app)
 export default connect(mapStateToProps)(IssueList);

@@ -4,7 +4,8 @@ import './Container.css';
 import SideBar from '../SideBar/SideBar.jsx';
 import IssueList from '../IssueList/IssueList.jsx';
 
-class Container extends Component {
+// Use named export for unconnected component (for tests)
+export class Container extends Component {
   render() {
     return (
       <div className="container">
@@ -23,4 +24,5 @@ class Container extends Component {
   }
 }
 
+// Use default export for the connected component (for app)
 export default Container;

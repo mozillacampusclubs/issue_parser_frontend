@@ -1,0 +1,1775 @@
+exports[`container component renders correctly 1`] = `
+<div
+  className="container">
+  <section
+    className="row">
+    <section
+      className="col-md-3 side-bar">
+      <br />
+      <Connect(SideBar) />
+    </section>
+    <section
+      className="col-md-9">
+      <Connect(IssueList) />
+    </section>
+  </section>
+  <footer />
+</div>
+`;
+
+exports[`issue card component renders correctly 1`] = `
+<div>
+  <div
+    className="panel panel-default">
+    <div
+      className="panel-heading">
+      <h4
+        className="panel-title">
+        <b>
+          <a
+            href="https://github.com/mozillacampusclubs/issue_parser_backend/issues/7"
+            target="_">
+            Dockerize Project
+          </a>
+        </b>
+      </h4>
+      <div
+        className="lightslategray-text issue-card-date">
+        <span>
+          Created: 
+          <b>
+            Monday, June 5th, 2017
+          </b>
+        </span>
+        <span
+          className="pull-right">
+          Last Updated: 
+          <b>
+            Tuesday, June 6th, 2017
+          </b>
+        </span>
+      </div>
+    </div>
+    <div
+      className="panel-body">
+      <div
+        className="gray-text">
+        <span
+          className="label label-default"
+          style={
+            Object {
+              "backgroundColor": "#84b6eb",
+            }
+          }>
+          enhancement
+        </span>
+      </div>
+      <br />
+      <div
+        className="row">
+        <div
+          className="col-md-6">
+          <div
+            className="gray-text">
+            <span>
+              Experience Required: 
+            </span>
+            <span
+              className="issue-card-attr">
+              <b>
+                easyfix
+              </b>
+            </span>
+          </div>
+          <br />
+          <div
+            className="gray-text">
+            <span>
+              Language: 
+            </span>
+            <span
+              className="issue-card-attr">
+              <b>
+                python
+              </b>
+            </span>
+          </div>
+        </div>
+        <div
+          className="col-md-6">
+          <div
+            className="gray-text">
+            <span>
+              Technology Stack: 
+            </span>
+            <span
+              className="issue-card-attr">
+              <b>
+                django
+              </b>
+            </span>
+          </div>
+          <br />
+          <div
+            className="gray-text">
+            <span>
+              Expected Time: 
+            </span>
+            <span
+              className="issue-card-attr">
+              <b>
+                3 hours
+              </b>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`issue list component renders correctly when data is fetched 1`] = `
+<div>
+  <div>
+    <div>
+      <h3>
+        <b
+          className="gray-text">
+          Issues
+        </b>
+        <div
+          className="pull-right">
+          <span
+            className="badge">
+            Ordering: 
+            random
+             
+          </span>
+          <div
+            className="dropdown btn-group btn-group-sm btn-group-info">
+            <button
+              aria-expanded={false}
+              aria-haspopup={true}
+              className="dropdown-toggle btn btn-sm btn-info"
+              disabled={false}
+              id="sort"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              type="button">
+              Sort
+               
+              <span
+                className="caret" />
+            </button>
+            <ul
+              aria-labelledby="sort"
+              className="dropdown-menu"
+              role="menu">
+              <li
+                className=""
+                role="presentation"
+                style={undefined}>
+                <a
+                  href="#"
+                  id="sort-asc-experience_needed"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1">
+                  Exp-level (ascending)
+                </a>
+              </li>
+              <li
+                className=""
+                role="presentation"
+                style={undefined}>
+                <a
+                  href="#"
+                  id="sort-desc-experience_needed"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1">
+                  Exp-level (descending)
+                </a>
+              </li>
+              <li
+                className="divider"
+                onKeyDown={[Function]}
+                role="separator"
+                style={undefined} />
+              <li
+                className=""
+                role="presentation"
+                style={undefined}>
+                <a
+                  href="#"
+                  id="sort-asc-expected_time"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1">
+                  Expected time (descending)
+                </a>
+              </li>
+              <li
+                className=""
+                role="presentation"
+                style={undefined}>
+                <a
+                  href="#"
+                  id="sort-desc-expected_time"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  role="menuitem"
+                  tabIndex="-1">
+                  Expected time (descending)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </h3>
+    </div>
+    <div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_backend/issues/7"
+                  target="_">
+                  Dockerize Project
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Monday, June 5th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Tuesday, June 6th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text">
+              <span
+                className="label label-default"
+                style={
+                  Object {
+                    "backgroundColor": "#84b6eb",
+                  }
+                }>
+                enhancement
+              </span>
+            </div>
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      easyfix
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      python
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      django
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      3 hours
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_backend/issues/6"
+                  target="_">
+                  Implement expected time feature
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Sunday, June 4th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Tuesday, June 6th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text">
+              <span
+                className="label label-default"
+                style={
+                  Object {
+                    "backgroundColor": "#84b6eb",
+                  }
+                }>
+                enhancement
+              </span>
+            </div>
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      moderate
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      python
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      django
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      1 day
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_backend/issues/4"
+                  target="_">
+                  Configure MySQL Database
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Thursday, June 1st, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Tuesday, June 6th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      easyfix
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      python, sql
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      django
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      3 hrs
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_backend/issues/3"
+                  target="_">
+                  Add a fetcher component to periodically fetch issues from GitHub APIs.
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Thursday, June 1st, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Tuesday, June 6th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      senior
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      python
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      django, celery
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      2 days
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_frontend/issues/1"
+                  target="_">
+                  Initial Setup
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Friday, June 9th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Friday, June 9th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      easyfix
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      javascript
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      react.js
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      3 hours
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_frontend/issues/3"
+                  target="_">
+                  Add issue listing component to list requested issues
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Friday, June 9th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Friday, June 9th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text">
+              <span
+                className="label label-default"
+                style={
+                  Object {
+                    "backgroundColor": "#84b6eb",
+                  }
+                }>
+                enhancement
+              </span>
+            </div>
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      easyfix
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      javascript
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      react.js
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      3 hours
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_frontend/issues/5"
+                  target="_">
+                  Implement an easy to use expected time feature.
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Saturday, June 10th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Saturday, June 10th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      moderate
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      javascript
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      react.js
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      2 days
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_frontend/issues/6"
+                  target="_">
+                  Add a repository name and url field to backend & frontend
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Saturday, June 10th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Saturday, June 10th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      moderate
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      javascript
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      react.js
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      2 hours
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_backend/issues/8"
+                  target="_">
+                  Add sorting feature for expected time and experience level
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Tuesday, June 13th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Tuesday, June 13th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      moderate
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      python
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      django
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      1 day
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_backend/issues/11"
+                  target="_">
+                  Add Travis-CI for continuous integration
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Saturday, June 17th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Saturday, June 17th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      moderate
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      yml
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      django
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      1 day
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_backend/issues/12"
+                  target="_">
+                  Write test-cases for back end API
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Saturday, June 17th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Monday, June 19th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      moderate
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      python
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      django
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      1 week
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_frontend/issues/4"
+                  target="_">
+                  Implement sorting functionality
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Saturday, June 10th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Tuesday, June 20th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      moderate
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      javascript
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      react.js
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      1 hours
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_frontend/issues/8"
+                  target="_">
+                  Write test cases for testing each feature of the app.
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Tuesday, June 20th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Tuesday, June 20th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      moderate
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      javascript
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      jest
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      1 week
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="panel panel-default">
+          <div
+            className="panel-heading">
+            <h4
+              className="panel-title">
+              <b>
+                <a
+                  href="https://github.com/mozillacampusclubs/issue_parser_frontend/issues/7"
+                  target="_">
+                  Setup travis-ci for continuous integration
+                </a>
+              </b>
+            </h4>
+            <div
+              className="lightslategray-text issue-card-date">
+              <span>
+                Created: 
+                <b>
+                  Tuesday, June 20th, 2017
+                </b>
+              </span>
+              <span
+                className="pull-right">
+                Last Updated: 
+                <b>
+                  Tuesday, June 20th, 2017
+                </b>
+              </span>
+            </div>
+          </div>
+          <div
+            className="panel-body">
+            <div
+              className="gray-text" />
+            <br />
+            <div
+              className="row">
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Experience Required: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      moderate
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Language: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      javascript
+                    </b>
+                  </span>
+                </div>
+              </div>
+              <div
+                className="col-md-6">
+                <div
+                  className="gray-text">
+                  <span>
+                    Technology Stack: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      react.js
+                    </b>
+                  </span>
+                </div>
+                <br />
+                <div
+                  className="gray-text">
+                  <span>
+                    Expected Time: 
+                  </span>
+                  <span
+                    className="issue-card-attr">
+                    <b>
+                      1 day
+                    </b>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`issue list component renders correctly when data is fetching 1`] = `
+<div>
+  <div>
+    <br />
+    <br />
+    <h4>
+      Loading...
+    </h4>
+  </div>
+</div>
+`;
+
+exports[`issue list component renders correctly when server error 1`] = `
+<div>
+  <div>
+    <br />
+    <div
+      className="alert alert-warning ">
+      Something went wrong
+    </div>
+  </div>
+</div>
+`;
+
+exports[`side bar component renders correctly when data is fetched 1`] = `
+<div>
+  <div>
+    <form
+      className="form-group">
+      <div
+        className="form-group">
+        <h5>
+          Language
+        </h5>
+        <input
+          className="form-control"
+          id="language"
+          list="languages"
+          onChange={[Function]}
+          value={undefined} />
+        <datalist
+          id="languages">
+          <option
+            value="python" />
+          <option
+            value="javascript" />
+        </datalist>
+      </div>
+      <div
+        className="form-group">
+        <h5>
+          Experience Level
+        </h5>
+        <input
+          className="form-control"
+          id="experience_needed"
+          list="experienceNeeded"
+          onChange={[Function]}
+          value={undefined} />
+        <datalist
+          id="experienceNeeded">
+          <option
+            value="senior" />
+          <option
+            value="moderate" />
+          <option
+            value="easyfix" />
+        </datalist>
+      </div>
+      <div
+        className="form-group">
+        <h5>
+          Technology Stack
+        </h5>
+        <input
+          className="form-control"
+          id="tech_stack"
+          list="techStack"
+          onChange={[Function]}
+          value={undefined} />
+        <datalist
+          id="techStack">
+          <option
+            value="react.js" />
+          <option
+            value="django, celery" />
+          <option
+            value="jest" />
+          <option
+            value="django" />
+        </datalist>
+      </div>
+    </form>
+    <button
+      className="btn btn-primary"
+      onClick={[Function]}>
+      Submit
+    </button>
+  </div>
+</div>
+`;
+
+exports[`side bar component renders correctly when data is fetching 1`] = `
+<div>
+  <h3>
+    Loading... 
+  </h3>
+</div>
+`;
+
+exports[`side bar component renders correctly when server error 1`] = `
+<div>
+  <h4
+    className="alert alert-warning">
+    Error: Something went wrong
+  </h4>
+</div>
+`;
