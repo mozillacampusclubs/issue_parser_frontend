@@ -9,7 +9,7 @@ export default function reducer(state = {
   switch (action.type) {
     case "FETCH_REGION_LIST_PENDING":
       {
-        state = { ...state, regionsList: {
+        state = { ...state, regionList: {
           data: {},
           fetching: true,
           fetched: false,
@@ -19,7 +19,7 @@ export default function reducer(state = {
       }
     case "FETCH_REGION_LIST_FULFILLED":
       {
-        state = { ...state, regionsList: {
+        state = { ...state, regionList: {
           data: action.payload.data,
           fetching: false,
           fetched: true,
@@ -29,7 +29,7 @@ export default function reducer(state = {
       }
     case "FETCH_REGION_LIST_REJECTED":
       {
-        state = { ...state, regionsList: {
+        state = { ...state, regionList: {
           data: {},
           fetching: false,
           fetched: false,
