@@ -23,8 +23,15 @@ export class RegionsPageContainer extends Component {
           </div>
         )
       });
+      const allIssuesValue = {
+        id: 'all',
+        region_name: "Show me all the issues in the universe!"
+      }
       renderingComponent = (
         <div className="row">
+          <div className="col-md-12">
+            <RegionCard regionData={allIssuesValue} />
+          </div>
           {regions}
         </div>
       );

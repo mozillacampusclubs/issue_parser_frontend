@@ -15,10 +15,10 @@ export class Layout extends Component {
             <header>
               <NavBar></NavBar>
             </header>
-              <div>
-                <Route exact path="/" component={RegionsPageContainer}/>
-                <Route path="/issues/:id" component={IssuesPageContainer}/>
-              </div>
+            <div>
+              <Route exact path="/" component={RegionsPageContainer}/>
+              <Route path="/issues/:id" component={IssuesPageContainer}/>
+            </div>
             <footer>
             </footer>
           </div>

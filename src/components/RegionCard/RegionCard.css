@@ -1,9 +1,14 @@
 .region-card {
-  background: black;
+  background: #555;
   padding: 20px;
   color: white;
+  margin: 10px;
 }
 
 .region-card-link {
+  color: white;
+}
+
+.region-card-link:hover {
   color: white;
 }

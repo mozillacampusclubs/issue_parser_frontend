@@ -9,6 +9,11 @@ export function fetchMetaData() {
 }
 
 export function fetchIssuesList(state) {
+  if (state.regions === 'all') {
+    console.log(state)
+    delete state.regions
+    console.log(state)
+  }
   return {
     type: "FETCH_ISSUES_LIST",
     payload: axios.get(APIBase() + '/issues/', {
