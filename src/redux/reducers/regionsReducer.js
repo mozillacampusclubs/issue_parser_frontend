@@ -1,5 +1,5 @@
 export default function reducer(state = {
-  regionsList: {
+  regionList: {
     data: {},
     fetching: false,
     fetched: false,
