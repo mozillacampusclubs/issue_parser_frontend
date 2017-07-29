@@ -6,12 +6,13 @@ import IssueList from '../IssueList/IssueList.jsx';
 // Use named export for unconnected component (for tests)
 export class IssuesPageContainer extends Component {
   render() {
+    const regionId = this.props.match.params.id
     return (
       <div>
         <section className="row">
           <section className="col-md-3 side-bar">
             <br/>
-            <SideBar />
+            <SideBar regionId={regionId} />
           </section>
           <section className="col-md-9">
             <IssueList />

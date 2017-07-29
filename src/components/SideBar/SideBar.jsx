@@ -13,6 +13,7 @@ export class SideBar extends Component {
       language: '',
       tech_stack: '',
       experience_needed: '',
+      regions: this.props.regionId,
     };
     this.props.dispatch(fetchMetaData());
     this.handleChange = this.handleChange.bind(this);

@@ -17,6 +17,12 @@ export function fetchIssuesList(state) {
   }
 }
 
+export function resetIssuesList() {
+  return {
+    type: "RESET_ISSUES_LIST",
+  }
+}
+
 export function sortIssues(attr, order) {
   return {
         type: "SORT_ISSUES",

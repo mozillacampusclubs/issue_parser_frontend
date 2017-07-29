@@ -94,6 +94,17 @@ export default function reducer(state = {
         break;
       }
 
+    case "RESET_ISSUES_LIST":
+      {
+        state = { ...state, issuesList: {
+          data: {},
+          fetching: false,
+          fetched: false,
+          error: false,
+        }};
+        break;
+      }
+
     default:
       {}
   }

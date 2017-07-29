@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { DropdownButton, MenuItem } from 'react-bootstrap';
 
 import { connect } from 'react-redux';
-import { sortIssues } from '../../redux/actions/issuesActions';
+import { sortIssues, resetIssuesList } from '../../redux/actions/issuesActions';
 import IssueCard from '../IssueCard/IssueCard'
 
 // Use named export for unconnected component (for tests)
@@ -19,6 +19,10 @@ export class IssueList extends Component {
     this.props.dispatch(sortIssues(value, order));
     let sort = order === 1 ? ' (ascending)' : ' (descending)';
     this.setState({ordering: value + sort});
+  }
+
+  componentWillUnmount(){
+    this.props.dispatch(resetIssuesList());
   }
 
   render() {
