@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import { APIBase } from '../../constraints';
 import './NavBar.css'
@@ -10,7 +11,7 @@ export class NavBar extends Component {
     return (
       <nav>
         <div className="navbar">
-          <img src={logo} alt="" className="mozilla-logo"/>
+          <Link to="/"><img src={logo} alt="mozilla logo" className="mozilla-logo"/></Link>
           <span className="navbar-admin-login"><a href={APIBase() + '/admin'}>Admin Login</a></span>
         </div>
       </nav>

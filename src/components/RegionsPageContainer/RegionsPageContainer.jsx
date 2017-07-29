@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { Panel } from 'react-bootstrap';
 
+import { RegionCard } from '../RegionCard/RegionCard';
 import { fetchRegionList } from '../../redux/actions/regionsActions';
 
 // Use named export for unconnected component (for tests)
@@ -18,13 +17,15 @@ export class RegionsPageContainer extends Component {
     if (regionList.fetched) {
       let regions;
       regions = regionList.data.map((value, key) => {
-        return <Link to={'/issues/' + value.id}><Panel key={key}>{value.region_name}</Panel></Link>
+        return (
+          <div key={value.id} className="col-md-4">
+            <RegionCard regionData={value} />
+          </div>
+        )
       });
       renderingComponent = (
-        <div>
-          <ul>
-            {regions}
-          </ul>
+        <div className="row">
+          {regions}
         </div>
       );
     } else if (regionList.fetching) {

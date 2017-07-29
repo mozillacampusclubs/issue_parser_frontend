@@ -1,6 +1,7 @@
 .navbar {
   border-bottom: 2px solid black;
   height: 100px;
+  margin-bottom: 0;
 }
 
 .mozilla-logo {

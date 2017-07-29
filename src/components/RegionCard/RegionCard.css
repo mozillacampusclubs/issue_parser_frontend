@@ -1,0 +1,9 @@
+.region-card {
+  background: black;
+  padding: 20px;
+  color: white;
+}
+
+.region-card-link {
+  color: white;
+}

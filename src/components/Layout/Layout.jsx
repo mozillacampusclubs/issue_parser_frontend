@@ -10,18 +10,19 @@ export class Layout extends Component {
   render() {
     return (
       <div className="container">
-        <header>
-          <NavBar></NavBar>
-        </header>
         <Router>
           <div>
-            <Route exact path="/" component={RegionsPageContainer}/>
-            <Route path="/issues/:id" component={IssuesPageContainer}/>
+            <header>
+              <NavBar></NavBar>
+            </header>
+              <div>
+                <Route exact path="/" component={RegionsPageContainer}/>
+                <Route path="/issues/:id" component={IssuesPageContainer}/>
+              </div>
+            <footer>
+            </footer>
           </div>
         </Router>
-        <footer>
-
-        </footer>
       </div>
     );
   }
