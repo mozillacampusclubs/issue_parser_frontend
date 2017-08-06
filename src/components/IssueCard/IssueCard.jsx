@@ -15,7 +15,7 @@ export class IssueCard extends Component {
 
     labelsList = data.issue_labels.map((labelInstance, key) => {
       return (
-        <span className="label label-default" key={key} style={{backgroundColor: '#' + labelInstance.label_color}}>
+        <span className="label label-default issue-card-labels" key={key} style={{backgroundColor: '#' + labelInstance.label_color}}>
           {labelInstance.label_name}
         </span>
       );

@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.css';
 
+import Layout from './components/Layout/Layout';
 import store from './redux/store';
-import Container from './components/Container/Container';
-import './index.css';
 
 ReactDOM.render(
   <Provider store={ store }>
-    <Container />
+    <Layout />
   </Provider>,
   document.getElementById('root')
 );

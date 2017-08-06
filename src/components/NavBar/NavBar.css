@@ -1,0 +1,14 @@
+.navbar {
+  border-bottom: 2px solid black;
+  height: 100px;
+  margin-bottom: 0;
+}
+
+.mozilla-logo {
+  height: 100px;
+}
+
+.navbar-admin-login {
+  float: right;
+  margin: 40px 5px;
+}
